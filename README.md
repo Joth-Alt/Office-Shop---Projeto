@@ -2,7 +2,7 @@
 ![Banner do Meu Projeto](https://media.discordapp.net/attachments/1136065868065935401/1445059284458143815/Black_and_Beige_Simple_Coming_Soon_Banner_3.png?ex=692ef7d5&is=692da655&hm=8bf37625c0d0db956a28a7272177f3fe3341d9d4a5aa4586eae69a6535588e9a&=&format=webp&quality=lossless&width=1298&height=649)
 
 
-# 🛍️ Office Shop
+# Office Shop
 
 Projeto de E-commerce Web
 
@@ -10,7 +10,7 @@ O **Office Shop** é uma aplicação de e-commerce desenvolvida com foco em
 modularidade, usabilidade e recursos modernos --- incluindo sistema de
 temas (claro/escuro) e suporte a múltiplos idiomas.
 
-## ✨ Visão Geral
+##Visão Geral
 
 O projeto funciona como um protótipo funcional de loja virtual,
 permitindo navegação entre produtos, busca, gerenciamento de favoritos e
@@ -26,7 +26,7 @@ um carrinho de compras integrado a uma API PHP.
 -   **Tema Claro/Escuro:** Alternância por `home.js`.
 -   **Modais:** Para carrinho e login.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
   --------------------------------------------------------------------------
   Categoria                  Tecnologia                      Uso
@@ -46,7 +46,7 @@ um carrinho de compras integrado a uma API PHP.
   Servidor                   Apache / XAMPP / WAMP           Execução local
   --------------------------------------------------------------------------
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
   Arquivo / Diretório         Descrição
   --------------------------- -------------------------------------------------
@@ -61,7 +61,7 @@ um carrinho de compras integrado a uma API PHP.
   **css/**                    Estilos
   **imagens/**                Imagens do projeto
 
-## ⚙️ Como Executar Localmente
+## Como Executar Localmente
 
 ### 1. Clonar o Repositório
 
