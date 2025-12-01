@@ -1,0 +1,176 @@
+/* 1. Reset e Base do Body */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex; 
+            min-height: 100vh;
+            /* CRIA ESPAÇO INICIAL PARA A SIDEBAR DE 240px */
+            padding-left: 240px; 
+            overflow-x: hidden; 
+        }
+
+        /* CORREÇÃO: Força a Sidebar a ficar na frente */
+        .sidebar {
+            position: fixed; /* Garante que o z-index funcione */
+            z-index: 1000; /* Prioridade máxima de empilhamento */
+        }
+
+        /* 2. Caixinha de Filtros (FLUTUANTE, ATRÁS DA SIDEBAR) */
+        .filter-box {
+            position: fixed; 
+            /* COMEÇA ONDE A SIDEBAR DE 240px TERMINA */
+            left: 240px; 
+            top: 0;
+            width: 250px; /* Largura do filtro */
+            height: 100vh; 
+            background-color: #1a1a1a; 
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 50; /* Fica ATRÁS da Sidebar (1000) */
+            overflow-y: auto;
+            color: #f0f0f0;
+            
+            /* Efeito de deslizar */
+            transform: translateX(0); 
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .filter-box.closed {
+            /* Move a caixa (250px) para a esquerda, escondendo-a completamente atrás da sidebar */
+            transform: translateX(-250px); 
+        }
+
+        /* 3. Área Principal de Resultados (Ajusta a margem dinamicamente) */
+        .results-area-main {
+            flex-grow: 1;
+            padding: 20px 40px;
+            min-height: 100vh;
+            
+            /* A área de resultados desliza para dar espaço ao filtro */
+            margin-left: 0; 
+            transition: margin-left 0.3s ease-in-out;
+            
+            /* Fundo da Área da Página */
+            background: linear-gradient(to top, #FF0059, #D40F54); 
+            background-image: url('imagems/background/patternpretto.webp'); 
+            background-size: 80px 80px;
+            
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* 4. Ajuste da Margem quando o Filtro está ABERTO */
+        body.filter-open .results-area-main {
+            /* Empurra os resultados em 250px (largura do filtro) */
+            margin-left: 250px; 
+        }
+        
+        /* Estilo para os produtos importados */
+        .products-grid-new .produto {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .products-grid-new .produto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .products-grid-new .produto .imagem-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .products-grid-new .produto .nome-e-preco {
+            padding: 5px 0 10px;
+        }
+
+        .products-grid-new .produto .nome {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .products-grid-new .produto .preco {
+            display: block;
+            color: #df2356;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        .products-grid-new .produto .acoes {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .products-grid-new .produto .comprar {
+            background-color: #555;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.8em;
+            transition: background-color 0.2s;
+        }
+
+        .products-grid-new .produto .comprar:hover {
+            background-color: #333;
+        }
+
+        .products-grid-new .produto .add-to-cart-btn,
+        .products-grid-new .produto .favoritar {
+            background: none;
+            border: 1px solid #df2356;
+            color: #df2356;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .products-grid-new .produto .add-to-cart-btn:hover,
+        .products-grid-new .produto .favoritar:hover {
+            background-color: #df2356;
+            color: white;
+        }
+
+        .products-grid-new .produto .favoritar.favoritado {
+            background-color: #df2356;
+            color: white;
+        }
+
+        /* ESTILOS INTERNOS DO FILTRO (Mantidos) */
+        .filter-title { font-size: 1.5em; margin-bottom: 25px; color: #f0f0f0; font-weight: 600; }
+        .filter-section { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #333; }
+        .filter-section h3 { font-size: 0.9em; margin-bottom: 10px; color: #aaa; font-weight: 500; text-transform: uppercase; }
+        .price-range { display: flex; align-items: center; gap: 10px; }
+        .price-input { width: 40%; padding: 8px 10px; border-radius: 6px; border: 1px solid #555; background-color: #2a2a2a; color: #f0f0f0; font-size: 1em; }
+        .price-separator { color: #f0f0f0; font-size: 0.9em; margin-right: 5px; }
+        .size-options { display: flex; flex-wrap: wrap; gap: 8px; }
+        .size-btn { background-color: #444; color: #f0f0f0; border: none; padding: 8px 12px; border-radius: 6px; font-size: 0.9em; cursor: pointer; transition: background-color 0.2s; }
+        .size-btn.active { background-color: #df2356; color: white; }
+        .checkbox-option { display: flex; align-items: center; margin-bottom: 10px; padding-top: 5px; }
+        .checkbox-option label { margin-left: 10px; cursor: pointer; color: #f0f0f0; }
+        .checkbox-option input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; background-color: #444; border: 1px solid #777; accent-color: #df2356; }
+        .category-link { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; text-decoration: none; color: #f0f0f0; font-weight: 500; font-size: 1em; transition: color 0.2s; }
+        .search-bar-new { display: flex; align-items: center; background-color: #f0f0f0; border-radius: 30px; padding: 10px 20px; max-width: 600px; margin-bottom: 30px; }
+        .search-input-new { flex-grow: 1; border: none; background: transparent; padding: 8px 10px; font-size: 1em; outline: none; color: #333; }
+        .search-bar-new .search-icon { color: #df2356; font-size: 1.2em; }
+        .search-bar-new .mic-icon { color: #df2356; font-size: 1.2em; cursor: pointer; margin-left: 10px; }
+        .products-grid-new { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+            gap: 20px; 
+            width: 100%; /* Garante que o grid ocupe o espaço total */
+        }

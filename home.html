@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Office Shop - Loja Online</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="icon" href="imagem_produtos\logo.png" type="image/png">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="logo-container">
+      <h2>Office Shop</h2>
+    </div>
+    <nav class="menu-principal">
+      <a href="#"><i class="fas fa-home"></i> <span class="txt">Home</span></a>
+      <a href="#"><i class="fas fa-heart"></i> <span class="txt">Favoritos</span></a>
+      <a href="#"><i class="fas fa-user"></i> <span class="txt">Perfil</span></a>
+      <a href="#"><i class="fas fa-envelope"></i> <span class="txt">Contato</span></a>
+    </nav>
+    <nav class="menu-config">
+      <a href="#"><i class="fas fa-cog"></i> <span class="txt">Configurações</span></a>
+      <a href="#" id="themeToggle"><i class="fas fa-adjust"></i> <span class="txt">Tema</span></a>
+
+      <!-- TRADUÇÃO -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn"><i class="fas fa-language"></i> <span class="txt">Tradução</span></a>
+        <div class="dropdown-content">
+          <button onclick="setLanguage('pt')">🇧🇷 Português</button>
+          <button onclick="setLanguage('en')">🇺🇸 English</button>
+          <button onclick="setLanguage('es')">🇪🇦 Español</button>
+        </div>
+      </div>
+
+      <a href="#" id="openCart"><i class="fas fa-shopping-cart"></i> <span class="txt">Carrinho</span> <span class="cart-count">0</span></a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="top-nav">
+      <div class="search-container">
+        <input type="text" placeholder="Pesquisar produtos...">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+      </div>
+<div class="user-actions">
+  <a href="#" id="openLogin" class="login-btn"><i class="fas fa-sign-in-alt"></i> Entrar</a>
+</div>
+    </header>
+
+    <!-- BANNER PRINCIPAL -->
+    <div class="banner-slider">
+      <div class="slider-container">
+        <div class="slide active">
+          <img src="imagem_fundo/banner2.png" alt="Promoção de Verão">
+          <div class="banner-text">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORIAS -->
+    <section class="categorias">
+      <h2 class="section-title">Categorias</h2>
+      <div class="categorias-grid">
+        <a href="#" class="categoria-card">
+          <img src="imagem_produtos/coil.jpg" alt="Roupas">
+          <span>Roupas</span>
+        </a>
+        <a href="#" class="categoria-card">
+          <img src="imagem_fundo/banner2.png" alt="">
+          <span></span>
+        </a>
+        <a href="#" class="categoria-card">
+          <img src="imagem_fundo/banner2.png" alt="">
+          <span></span>
+        </a>
+        <a href="#" class="categoria-card">
+          <img src="imagem_fundo/banner2.png" alt="">
+          <span></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- OFERTAS RELÂMPAGO -->
+    <section class="ofertas-relampago">
+      <div class="section-header">
+        <h2 class="section-title">Ofertas Relâmpago</h2>
+      </div>
+      <div class="produtos-grid">
+        <div class="produto">
+          <div class="produto-tag">-30%</div>
+          <a href="#" class="imagem-link">
+            <img src="imagem_fundo/banner2.png" alt="Moletom Preto" />
+          </a>
+          <button class="carrinho-btn"><i class="fas fa-shopping-cart"></i></button>
+          <div class="produto-info">
+            <h3 class="produto-nome">Moletom Premium Preto</h3>
+            <div class="produto-preco">
+              <span class="preco-antigo">R$ 199,90</span>
+              <span class="preco-atual">R$ 139,90</span>
+            </div>
+            </div>
+          </div>
+              <div class="produtos-grid">
+        <div class="produto">
+          <div class="produto-tag">-30%</div>
+          <a href="#" class="imagem-link">
+            <img src="imagem_fundo/banner2.png" alt="Moletom Preto" />
+          </a>
+          <button class="carrinho-btn"><i class="fas fa-shopping-cart"></i></button>
+          <div class="produto-info">
+            <h3 class="produto-nome">Moletom Premium Preto</h3>
+            <div class="produto-preco">
+              <span class="preco-antigo">R$ 199,90</span>
+              <span class="preco-atual">R$ 139,90</span>
+            </div>
+            </div>
+          </div>
+        </div>
+              <div class="produtos-grid">
+        <div class="produto">
+          <div class="produto-tag">-30%</div>
+          <a href="#" class="imagem-link">
+            <img src="imagem_fundo/banner2.png" alt="Moletom Preto" />
+          </a>
+          <button class="carrinho-btn"><i class="fas fa-shopping-cart"></i></button>
+          <div class="produto-info">
+            <h3 class="produto-nome">Moletom Premium Preto</h3>
+            <div class="produto-preco">
+              <span class="preco-antigo">R$ 199,90</span>
+              <span class="preco-atual">R$ 139,90</span>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="produto">
+          <div class="produto-tag">-30%</div>
+          <a href="#" class="imagem-link">
+            <img src="imagem_fundo/banner2.png" alt="Moletom Preto" />
+          </a>
+          <button class="carrinho-btn"><i class="fas fa-shopping-cart"></i></button>
+          <div class="produto-info">
+            <h3 class="produto-nome">Moletom Premium Preto</h3>
+            <div class="produto-preco">
+              <span class="preco-antigo">R$ 199,90</span>
+              <span class="preco-atual">R$ 139,90</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE PROMOÇÕES -->
+<section class="promocoes">
+  <!-- Banner grande -->
+  <div class="promo-banner">
+    <img src="imagem_fundo/banner2.png" alt="Frete Grátis">
+    <div class="promo-texto">
+    </div>
+  </div>
+
+  <!-- Carrossel de promoções -->
+  <div class="promo-carousel">
+    <div class="promo-lista">
+      <div class="promo-item">
+        <img src="imagem_produtos/coil.jpg" alt="Moletom Preto">
+        <h3>MOLETOM PRETO - SINCE 2012</h3>
+        <p class="preco"><span class="old">R$ 269,90</span> <span class="new">R$ 249,90</span></p>
+      </div>
+            <div class="promo-item">
+        <img src="imagem_produtos/coil.jpg" alt="Moletom Canela">
+        <h3>MOLETOM CANELA - MINI LOGO</h3>
+        <p class="preco"><span class="old">R$ 269,90</span> <span class="new">R$ 249,90</span></p>
+      </div>
+</section>
+
+    
+    
+    <section class="destaques">
+      <h2 class="section-title">Destaques</h2>
+      <div class="produtos-grid">
+        <div class="produto">
+          <a href="#" class="imagem-link">
+            <img src="imagem_produtos/moletom-canela.jpg" alt="Moletom Canela" />
+          </a>
+          <button class="carrinho-btn"><i class="fas fa-shopping-cart"></i></button>
+          <div class="produto-info">
+            <h3 class="produto-nome">Moletom Canela</h3>
+            <div class="produto-preco">
+              <span class="preco-atual">R$ 159,90</span>
+            </div>
+            <button class="comprar-btn">Comprar Agora</button>
+          </div>
+        </div>
+       
+      </div>
+    </section>
+
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Sobre Nós</h4>
+          <p>A Office Shop é uma loja online comprometida com qualidade e satisfação do cliente.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/HospiceCorp">      <i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Links Úteis</h4>
+          <ul>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Termos de Serviço</a></li>
+            <li><a href="#">Trocas e Devoluções</a></li>
+            <li><a href="#">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i>Av. Monsenhor Theodomiro Lobo, 100 - Parque Res. Maria Elmira, Caçapava - SP </li>
+            <li><i class="fas fa-phone"></i> (11) 1234-5678</li>
+            <li><i class="fas fa-envelope"></i> hospicecorp@gmail.com</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Pagamentos</h4>
+          <div class="pagamentos">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-cc-amazon-pay"></i>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Office Shop. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- MODAL CARRINHO -->
+    <div class="modal" id="cartModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Seu Carrinho</h3>
+          <button id="closeModal">&times;</button>
+        </div>
+        <div class="cart-items-container">
+          <ul id="cartItems"></ul>
+        </div>
+        <div class="modal-footer">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span id="total">R$ 0,00</span>
+          </div>
+          <a href="pagamento.html" class="pagamento-btn">Finalizar Compra</a>
+        </div>
+      </div>
+    </div>
+    
+    <div id="modalLogin" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <div id="formLogin">
+            <h2>Entrar</h2>
+            <input type="email" id="emailLogin" placeholder="E-mail">
+            <input type="password" id="senhaLogin" placeholder="Senha">
+            <button id="btnEntrar">Entrar</button>
+            <br>
+            <button id="btnGoogle">Entrar com Google</button>
+            <p>Não tem conta? <a href="#" id="linkCadastro">Criar conta</a></p>
+        </div>
+
+        <div id="formCadastro" style="display:none;">
+            <h2>Criar Conta</h2>
+            <input type="text" id="nomeCadastro" placeholder="Nome">
+            <input type="email" id="emailCadastro" placeholder="E-mail">
+            <input type="password" id="senhaCadastro" placeholder="Senha">
+            <button id="btnCadastrar">Cadastrar</button>
+            <p>Já tem conta? <a href="#" id="linkLogin">Entrar</a></p>
+        </div>
+    </div>
+</div>
+  </main>
+
+  <script src="home.js"></script>
+</body>
+</html>

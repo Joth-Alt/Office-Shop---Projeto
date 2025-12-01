@@ -1,0 +1,435 @@
+/* Estilos Gerais do Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; /* Fundo claro para contrastar */
+    color: #333;
+    padding: 20px;
+    margin: 0;
+}
+
+
+
+/* Título principal */
+h1 {
+    color: #cc3366; /* Rosa/Vermelho principal */
+    border-bottom: 3px solid #cc3366;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilos da Tabela */
+table {
+    width: 100%;
+    border-collapse: separate; /* Muda de collapse para separate */
+    border-spacing: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #fff; /* Fundo branco para a tabela */
+    border-radius: 8px; /* Bordas arredondadas */
+    overflow: hidden; /* Garante que as bordas arredondadas funcionem */
+}
+
+/* Cabeçalho da Tabela */
+th {
+    background-color: #cc3366; /* Fundo rosa/vermelho do tema */
+    color: white;
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Ajuste de bordas arredondadas para o cabeçalho */
+table tr:first-child th:first-child {
+    border-top-left-radius: 8px;
+}
+
+table tr:first-child th:last-child {
+    border-top-right-radius: 8px;
+}
+
+/* Células de Dados */
+td {
+    border: 1px solid #ddd; /* Borda mais suave */
+    padding: 10px 8px;
+    vertical-align: middle;
+    /* Remove a borda padrão do código PHP para usar a borda interna definida acima */
+    border-left: none;
+    border-right: none;
+}
+
+/* Efeito Zebra (listras) para linhas da tabela */
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Linhas pares levemente cinzas */
+}
+
+/* Efeito de Hover nas Linhas */
+table tr:hover {
+    background-color: #ffe6f0; /* Um tom de rosa bem claro ao passar o mouse */
+    cursor: pointer;
+}
+
+/* Avatares de Clientes */
+.avatar-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #cc3366; /* Borda no estilo do tema */
+    vertical-align: middle;
+}
+
+/* Miniaturas de Produtos */
+.produto-mini-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: transform 0.2s;
+}
+
+.produto-mini-img:hover {
+    transform: scale(1.1); /* Efeito sutil ao passar o mouse */
+    border-color: #cc3366;
+}
+
+/* Container de Imagens - ajusta a disposição */
+.img-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Alinha as miniaturas e o texto (se houver) */
+    gap: 5px; /* Espaço entre as miniaturas */
+}
+
+/* Mensagem de "Nenhum pedido encontrado" */
+p {
+    padding: 20px;
+    text-align: center;
+    color: #cc3366;
+    background-color: #fff;
+    border: 1px dashed #cc3366;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f6fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header p {
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .alert.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card.out-of-stock {
+            border-left: 4px solid #e74c3c;
+        }
+
+        .product-card.in-stock {
+            border-left: 4px solid #27ae60;
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .product-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            flex: 1;
+        }
+
+        .stock-status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .stock-status.out-of-stock {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .stock-status.in-stock {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background-color: #f8f9fa;
+        }
+
+        .product-info {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .edit-form {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 80px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-danger {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .empty-state i {
+            font-size: 4em;
+            color: #bdc3c7;
+            margin-bottom: 20px;
+        }
+
+        .empty-state h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .empty-state p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .current-image {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            max-height: 150px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .file-input-wrapper input[type=file] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .file-input-label {
+            display: block;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-input-label:hover {
+            background: #e9ecef;
+            border-color: #3498db;
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            flex: 1;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .total-products { border-top: 4px solid #3498db; }
+        .out-of-stock-count { border-top: 4px solid #e74c3c; }
+        .in-stock-count { border-top: 4px solid #27ae60; }
+    

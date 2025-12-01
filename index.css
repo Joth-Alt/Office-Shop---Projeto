@@ -1,0 +1,132 @@
+.search-dropdown {
+    display: flex; 
+    flex-direction: column; 
+    position: absolute; 
+    z-index: 1000; 
+    background-color: #222; 
+    width: 100%; 
+    max-height: 300px; 
+    overflow-y: auto; 
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    top: 100%; 
+    left: 0;
+}
+
+.search-result-item {
+    padding: 12px 15px; /* Mais padding vertical para respirar */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+   
+    /* Texto claro para contraste no fundo escuro */
+    color: var(--color-text-light, #E0E0E0);
+   
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+    font-size: 0.9em; /* Levemente menor para um look mais limpo */
+   
+    /* Divisor de linha mais escuro e sutil */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+ 
+.search-result-item:last-child {
+    border-bottom: none;
+}
+ 
+.search-result-item:hover {
+    /* Fundo Escuro para Hover Suave */
+    background-color: var(--color-hover-bg, #2D2D2D);
+   
+    /* Destaca o texto com a cor primária vibrante no hover */
+    color: var(--color-primary, #DF2356);
+}
+ 
+ 
+/* --- 3. IMAGEM DO PRODUTO (img) --- */
+.search-result-item img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover; /* Melhor para manter o tamanho sem esticar */
+    margin-right: 15px;
+   
+    /* Borda sutil para separar do fundo escuro */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px; /* Mais arredondado */
+}
+ 
+/* --- 4. TEXTO DE ERRO/VAZIO --- */
+.search-result-item.no-results {
+    color: #999; /* Cinza suave para a mensagem */
+    justify-content: center;
+    cursor: default;
+    padding: 15px;
+    font-style: italic;
+    background-color: transparent; /* Garante que o hover não mude o fundo */
+}
+/* --- ESTILOS PARA A SEÇÃO DE CATEGORIAS (QUADRADO E MODERNO) --- */
+ 
+/* Contêiner Principal da Seção de Categorias */
+.loja .categorias {
+    /* Layout Horizontal e Rolagem */
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+   
+    /* Estética Quadrada e Limpa */
+    padding: 15px 30px;
+    margin: 20px 0;
+    gap: 10px; /* Espaço reduzido entre os links */
+    background-color: transparent; /* Fundo transparente ou muito claro */
+    border-radius: 0; /* Remove o arredondamento */
+    /* Remove shadow para visual mais flat */
+    box-shadow: none;
+    border-bottom: 2px solid var(--border-color, #eee); /* Linha sutil para separar */
+}
+ 
+/* Oculta a barra de rolagem (WebKit) */
+.loja .categorias::-webkit-scrollbar {
+    display: none;
+}
+ 
+/* Estilo de cada Link de Categoria */
+.loja .categorias a {
+    flex-shrink: 0;
+    white-space: nowrap;
+   
+    /* Estética Quadrada e Botão */
+    text-decoration: none;
+    font-weight: 500; /* Peso médio para modernidade */
+    font-size: 0.9em; /* Levemente menor */
+    padding: 10px 15px;
+    border-radius: 4px; /* Cantos levemente arredondados (quase quadrados) */
+   
+    /* Cores Claras e Limpas */
+    background-color: var(--card-bg, #ffffff); /* Fundo branco puro */
+    color: var(--text-color, #333); /* Texto escuro */
+    border: 1px solid var(--border-color, #ddd);
+   
+    transition: all 0.2s ease;
+}
+ 
+/* Efeito ao passar o mouse (Minimalista) */
+.loja .categorias a:hover {
+    background-color: var(--hover-bg, #f5f5f5); /* Hover muito sutil */
+    border-color: var(--primary-color, #DF2356); /* A cor primária define a borda */
+    color: var(--primary-color, #DF2356);
+    transform: translateY(-2px); /* Efeito de elevação sutil e moderno */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+ 
+/* Estilo de Categoria Ativa (Para dar destaque) */
+.loja .categorias a.active {
+    background-color: var(--primary-color, #DF2356);
+    color: white;
+    border-color: var(--primary-color, #DF2356);
+    font-weight: 600;
+    box-shadow: none; /* Remove a sombra para o estilo flat */
+    transform: none;
+}
+ 
