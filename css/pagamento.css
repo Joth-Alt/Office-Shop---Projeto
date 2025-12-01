@@ -1,0 +1,387 @@
+/* Seu CSS Original */
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    min-height: 100vh;
+    /* Espaço para a sidebar completa (240px) */
+    padding-left: 240px; 
+    overflow-x: hidden; 
+    /* Estilo de fundo do seu site */
+    background: linear-gradient(to top, #FF0059, #D40F54); 
+    background-image: url('imagems/background/patternpretto.webp'); 
+    background-size: 80px 80px;
+}
+
+/* Garantir que a sidebar fixa funcione com z-index alto */
+.sidebar {
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 240px; /* Sua largura padrão */
+    /* Se for necessário, adicione aqui o fundo dela, caso basic.css não defina */
+    /* background-color: #1a1a1a; */ 
+}
+
+/* Container Principal da Tela de Pagamento */
+.checkout-container {
+    flex-grow: 1;
+    display: flex;
+    background-color: white; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    min-height: 90vh;
+}
+
+/* Coluna Esquerda: Detalhes do Pedido */
+.order-summary {
+    flex: 2; 
+    padding: 30px;
+}
+.back-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 25px;
+    display: inline-block;
+    font-size: 1.1em;
+}
+#cart-items-summary {
+    /* Container para os produtos carregados pelo JS */
+    border-top: 1px solid #ddd;
+}
+
+/* Estilo do Item no Carrinho (usado pelo JS) */
+.cart-item {
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+.cart-item:last-of-type {
+    border-bottom: none;
+}
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+.item-details {
+    flex-grow: 1;
+}
+.item-details h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    color: #333;
+}
+.item-details p {
+    margin: 0 0 10px 0;
+    font-size: 0.9em;
+    color: #777;
+}
+.item-details .remove-btn {
+    color: #fff0f0; /* Note: Essa cor parece ser um erro, é muito clara. */
+    text-decoration: none;
+    font-size: 0.85em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.item-actions {
+    display: flex;
+    align-items: center;
+}
+.quantity-control {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.quantity-control button {
+    background-color: #f8f8f8;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #333;
+    font-size: 1em;
+}
+.quantity-control input {
+    width: 30px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 8px 0;
+    outline: none;
+}
+.item-price {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333; 
+}
+
+/* Coluna Direita: Detalhes do Pagamento (O painel preto) */
+.payment-details {
+    flex: 1; 
+    background-color: #1a1a1a; 
+    color: white;
+    padding: 30px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.payment-details h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.payment-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.payment-options img {
+    height: 25px;
+    margin-right: 15px; 
+}
+.payment-options .more-options {
+    color: #df2356; 
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Formulário e Inputs (Cores vibrantes) */
+.payment-details label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #aaa;
+}
+.payment-details input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #df2356; /* Cor de input vibrante */
+    color: white;
+    font-size: 1em;
+    box-sizing: border-box;
+    outline: none;
+}
+.payment-details input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+.form-row > div {
+    flex: 1;
+}
+
+/* Resumo dos valores */
+.total-summary {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+.total-row.final {
+    font-weight: 700;
+    color: #df2356;
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #df2356;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: background-color 0.2s;
+}
+.checkout-btn:hover {
+    background-color: #c91f4b;
+}
+
+/* ----------------------------------------------------
+ * NOVOS ESTILOS PARA CEP E ENDEREÇO (ADICIONADOS AQUI)
+ * ---------------------------------------------------- */
+
+/* CEP INPUT + BOTÃO LUPA - Garante alinhamento em linha */
+.cep-input-group {
+    display: flex; 
+    align-items: center;
+}
+
+/* Ajusta o input CEP para ficar lado a lado e combinar com o tema escuro/vibrante */
+.cep-input-group input {
+    /* Mantém os estilos do .payment-details input, mas ajusta as bordas */
+    flex-grow: 1; 
+    border-radius: 6px 0 0 6px; /* Borda arredondada só na esquerda */
+    border: 1px solid #df2356; /* Adiciona borda vibrante */
+    border-right: none; /* Remove a linha divisória */
+    padding: 12px 15px; /* Altura consistente */
+    /* Certifique-se de que o input CEP herda o fundo #df2356 */
+}
+
+.cep-search-btn {
+    /* Estilo do botão de lupa, combinando com o tema vibrante */
+    background-color: #df2356; /* Cor de fundo vibrante */
+    color: white;
+    border: 1px solid #df2356; /* Borda para fechar o contêiner */
+    padding: 12px 15px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px;
+}
+
+.cep-search-btn:hover {
+    background-color: #c91f4b;
+}
+
+/* ÁREA DE RESULTADOS DO ENDEREÇO */
+.address-result-container {
+    /* Estilo de caixa para os resultados (fundo escuro, texto claro) */
+    background-color: #2a2a2a; 
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    margin-bottom: 25px;
+    color: white; /* Cor base do texto */
+}
+
+.address-result-container p {
+    margin: 5px 0;
+    font-size: 0.95em;
+    color: #ccc; /* Cor do texto descritivo */
+}
+
+.address-data {
+    font-weight: bold;
+    color: #df2356; /* Destaque vibrante para os dados */
+}
+
+/* Input de 'Número' dentro do contêiner de endereço */
+.address-result-container label {
+    margin-top: 10px;
+    color: #aaa; /* Cor da label */
+    font-weight: normal;
+}
+
+.address-result-container input {
+    background-color: #3a3a3a; /* Fundo mais escuro para o input interno */
+    border: 1px solid #555;
+}
+
+/* ----------------------------------------------------
+ * ESTILOS DO MODAL DE PAGAMENTO (O CARD BRANCO)
+ * ---------------------------------------------------- */
+.modal {
+    display: none; /* ESCONDE POR PADRÃO (AÇÃO CRUCIAL) */
+    position: fixed; /* Flutua sobre todo o conteúdo */
+    z-index: 2000; /* Garante que fique acima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escurecido */
+    
+    /* Centralização usando Flexbox (ativada pelo JS) */
+    justify-content: center; 
+    align-items: center; 
+}
+
+.modal-content {
+    background-color: #fefefe; /* Fundo branco do card */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5); 
+    width: 90%; 
+    max-width: 500px; 
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Estilos de Rádio Buttons e Botão de Confirmação (Repetido para completude) */
+
+.payment-option-group {
+    text-align: left;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.2s;
+}
+
+/* ... (Outras regras de payment-option-group) ... */
+
+
+/* ----------------------------------------------------
+ * ESTILOS DO CONTEÚDO DINÂMICO
+ * ---------------------------------------------------- */
+
+.payment-dynamic-content {
+    /* O display: none é manipulado via JS, mas mantemos o estilo base */
+    padding: 10px 0;
+    margin-top: 15px;
+    border-top: 1px solid #eee; /* Linha de separação */
+}
+
+/* Estilos para os inputs DENTRO do modal (Fundo Branco) */
+#contentCard input, #contentBoleto input {
+    /* Sobrescreve a regra global do painel escuro */
+    background-color: white; 
+    border: 1px solid #ccc;
+    color: #1a1a1a;
+    padding: 10px 15px; 
+    font-size: 1em;
+}
+
+#contentCard label, #contentBoleto label {
+    color: #555; 
+    margin-top: 15px;
+}

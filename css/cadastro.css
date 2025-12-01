@@ -1,0 +1,236 @@
+/*
+ * Variáveis de Cor (Ajuste se precisar que o tom de rosa seja exato)
+ */
+:root {
+    --primary-color: #e44d85; /* Rosa principal */
+    --secondary-color: #ff6f9f;
+    --background-color: #f7f7f7; /* Cor de fundo principal */
+    --card-background: #ffffff;
+    --text-color: #333;
+    --input-border: #ddd;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: Arial, sans-serif;
+    display: flex; /* Define o layout principal com a sidebar */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/*
+ * 1. LAYOUT GERAL (Sidebar e Conteúdo)
+ */
+.sidebar {
+    width: 250px; /* Largura da barra lateral (como na imagem) */
+    background-color: var(--primary-color);
+    color: white;
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.content {
+    /* Ajusta a margem para começar após a sidebar */
+    margin-left: 250px;
+    flex-grow: 1; /* Ocupa o restante da tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o card de cadastro horizontalmente */
+    min-height: 100vh;
+}
+
+/*
+ * 2. BARRA DE NAVEGAÇÃO SUPERIOR (top-nav)
+ */
+.top-nav {
+    width: 100%;
+    /* 100% da área de conteúdo (content), que já tem margem de 250px */
+    background-color: var(--card-background);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Fica fixo no topo da rolagem do 'content' */
+    top: 0;
+    z-index: 5;
+    box-sizing: border-box;
+}
+
+/* Ajustes básicos para que a pesquisa e o botão Entrar caibam na top-nav */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--input-border);
+    border-radius: 50px;
+    padding: 5px 15px;
+    background-color: #fff;
+}
+
+#search-input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 300px;
+}
+
+.mic-btn, .search-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.login-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.login-btn i {
+    margin-right: 5px;
+}
+
+
+/*
+ * 3. CARD DE CADASTRO (cadastro-container)
+ */
+.cadastro-container {
+    /* Remove os estilos temporários que estavam no HTML e usa o CSS */
+    background-color: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    max-width: 900px; /* Largura do card */
+    width: 90%;
+    margin-top: 50px; /* Espaço abaixo da top-nav */
+    margin-bottom: 50px;
+    overflow: hidden;
+    /* Centraliza o card na tela */
+    position: relative;
+    /* Redefine a exibição, pois o main.content já é flex */
+    display: flex; 
+}
+
+/* 4. COLUNAS INTERNAS DO CARD */
+
+.cadastro-form-content {
+    padding: 40px;
+    flex: 1; 
+    min-width: 450px; 
+}
+
+.cadastro-container h2 {
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    font-weight: normal; /* A imagem mostra um título menos bold */
+}
+
+.imagem-decorativa-container {
+    flex: 1; 
+    background-color: #f0f0f0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 350px;
+    padding: 20px;
+}
+
+.imagem-decorativa-container img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* 5. ESTILO DOS INPUTS E BOTÃO */
+
+.cadastro-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #666; /* Cor da label */
+}
+
+.cadastro-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    box-sizing: border-box; 
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.cadastro-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.termos-checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.termos-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto; /* Anula a largura 100% */
+    accent-color: var(--primary-color);
+}
+
+.termos-checkbox label {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+.termos-checkbox a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.btn-cadastrar {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff; /* Cor azul do botão na imagem */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.btn-cadastrar:hover {
+    background-color: #0056b3;
+}
+
+
+/*
+ * 6. RESPONSIVIDADE
+ */
+@media (max-width: 950px) {
+    .imagem-decorativa-container {
+        display: none;
+    }
+    .cadastro-container {
+        max-width: 500px;
+    }
+}

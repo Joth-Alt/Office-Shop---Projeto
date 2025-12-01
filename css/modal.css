@@ -1,0 +1,1358 @@
+/* =======================================================
+    ESTILOS GERAIS DO MODAL (Overlay)
+    ======================================================= */
+.modal {
+    /* Estado inicial: O JS deve mudar de 'none' para 'flex' */
+    display: none; 
+    
+    /* Posicionamento e Cobertura Total */
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Z-INDEX GIGANTE: Acima de TUDO */
+    z-index: 99999; 
+    
+    /* Fundo escurecido moderno e forte */
+    background-color: rgba(0, 0, 0, 0.85); 
+    
+    /* Centralização usando Flexbox */
+    justify-content: center;
+    align-items: center;
+    
+    /* Permite rolagem no overlay se o conteúdo for muito grande */
+    overflow-y: auto;
+}
+
+/* 2. ESTILOS DO CONTEÚDO DO MODAL (O cartão principal - Padrão para o Carrinho) */
+.modal-content {
+    z-index: 100000; 
+    background-color: #ffffff;
+    color: #333333;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.4), 
+        0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%; 
+    width: 550px; /* Largura padrão ideal */
+    /* MARGEM VERTICAL REMOVIDA PARA PERFEITA CENTRALIZAÇÃO */
+    position: relative; /* Necessário para posicionar o botão fechar */
+}
+
+/* 3. ESTILOS DO BOTÃO DE FECHAR (Padrão para Carrinho) */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: 300; 
+    line-height: 1;
+    color: #aaaaaa;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #ff4d4d;
+}
+
+/* =======================================================
+    ESTILOS ESPECÍFICOS DO MODAL DE LOGIN
+    ======================================================= */
+
+/* Estilo do container de conteúdo de Login (para centralizar o formulário) */
+.login-content {
+    /* Foi aplicado o width: 400px; aqui, substituindo o do modal-content para esta variação. */
+    width: 400px; 
+    padding: 0; 
+    overflow: hidden; 
+}
+
+/* Botão de fechar específico do Login */
+.close-login-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+    color: #fff; 
+    cursor: pointer;
+    z-index: 100001;
+    transition: color 0.2s;
+}
+
+.close-login-btn:hover {
+    color: #ff4d4d;
+}
+
+.login-mascote {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: center;
+    /* Usando um gradiente suave se a imagem falhar */
+    background: linear-gradient(135deg, #6c5ce700, #0985e300); 
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.login-form-container {
+    padding: 30px;
+    padding-top: 20px; 
+}
+
+.login-title {
+    text-align: center;
+    color: #333333;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Estilos de Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: 500;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #df2356;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+    outline: none;
+}
+
+/* Container de Senha com Ícone */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    padding-right: 40px; 
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.password-toggle:hover {
+    color: #df2356;
+}
+
+/* Opções de Login (Lembrar-me e Esqueceu a Senha) */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    color: #df2356;
+    cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: #df2356;
+}
+
+.forgot-password {
+    color: #df2356;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.forgot-password:hover {
+    color: #df2356;
+    text-decoration: underline;
+}
+
+/* =======================================================
+    ESTILOS DE BOTÕES DE AÇÃO (Novas melhorias)
+    ======================================================= */
+.sign-in-btn,
+.google-sign-in-btn,
+.checkout-btn {
+    width: 100%;
+    padding: 14px; 
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700; 
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+/* 4. Botão Principal (Entrar) */
+.sign-in-btn {
+    /* Gradiente vibrante para o botão primário */
+    background: linear-gradient(135deg,  #df2356, #FF0059); 
+    color: white;
+    margin-top: 15px;
+}
+
+.sign-in-btn:hover {
+    /* Mudo o gradiente ligeiramente ao hover */
+    background: linear-gradient(135deg,  #df2356, #FF0059);
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 25px  #df2356;
+}
+
+/* 5. Botão Secundário (Google) */
+.google-sign-in-btn {
+    background-color: #ffffff;
+    color: #555555;
+    border: 1px solid #dcdcdc; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); 
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google-sign-in-btn i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.google-sign-in-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* =======================================================
+    ESTILOS ESPECÍFICOS DO MODAL DE CARRINHO
+    ======================================================= */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.cart-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.cart-title i {
+    color: #df2356;
+    margin-right: 10px;
+}
+
+.cart-items-list {
+    max-height: 420px; 
+    overflow-y: auto;
+    padding-right: 10px; 
+    scrollbar-width: thin;
+    scrollbar-color: #ddd transparent;
+}
+
+/* Rodapé do Carrinho */
+.cart-footer {
+    padding-top: 20px;
+    border-top: 1px solid #eeeeee;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+#cart-total-value {
+    color: #df2356;
+}
+
+
+/* ==========================================================
+   ESTILOS DE ITEM INDIVIDUAL DO CARRINHO (AJUSTE DE TAMANHO)
+   ========================================================== */
+
+/* ==========================================================
+   ESTILOS DE ITEM INDIVIDUAL DO CARRINHO (Ajustado para 50px)
+   ========================================================== */
+
+/* Estilo para cada item individual */
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee; /* Usando cor fixa para exemplo */
+}
+
+/* 🚨 CORREÇÃO CRÍTICA: Força o tamanho e usa object-fit */
+.cart-item img {
+    width: 50px !important; /* Força 50px de largura */
+    height: 50px !important; /* Força 50px de altura */
+    
+    /* Garante que a imagem se ajuste ao container sem ser esticada */
+    object-fit: contain; 
+    
+    /* Previne que o elemento tente ocupar mais espaço (importantíssimo para Flexbox) */
+    flex-shrink: 0; 
+    
+    border-radius: 8px;
+    margin-right: 15px;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+}
+
+.item-info {
+    /* Garante que o texto ocupe o espaço restante */
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* ... O resto dos estilos como .item-name, .item-price, .item-actions seguem abaixo ... */
+
+/* Os estilos de texto e botões permanecem os mesmos */
+/* Informações e Ações do Item (Adicional) */
+.item-info {
+    flex-grow: 1;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+}
+
+/* 6. Botão Finalizar Compra (Checkout) */
+.checkout-btn {
+    /* Gradiente verde de sucesso */
+    background: linear-gradient(135deg, #df2356, #ad1a41);
+    color: white;
+    padding: 15px;
+    font-size: 1.1rem;
+    box-shadow: 0 6px 20px rgba(46, 204, 112, 0);
+}
+
+.checkout-btn:hover {
+    /* Mudo o gradiente ligeiramente ao hover */
+    background: linear-gradient(135deg, #df2356, #ad1a41);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(46, 204, 112, 0);
+}
+
+/*
+ * Arquivo: contato.css
+ * Estilos específicos para a página de Chat Bot
+ * Adaptado para seguir o padrão de container centralizado (similar ao pagamento.html)
+ */
+
+
+/* ================================================= */
+/* 1. LAYOUT PRINCIPAL (Deslocamento da Sidebar) */
+/* ================================================= */
+
+
+/* Define a área de conteúdo principal, respeitando o padding-left do body (240px) */
+.chat-page-content {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px; 
+    box-sizing: border-box;
+    background-color: transparent; 
+}
+
+
+/* ================================================= */
+/* 2. CONTAINER CENTRALIZADOR (A caixa branca/escura do chat) */
+/* ================================================= */
+
+.chat-main-container {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    background-color: white; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    
+    /* Configuração de Container: max-width e centralização */
+    max-width: 1000px; 
+    width: 100%;
+    margin: 0 auto; /* Centraliza horizontalmente na área de conteúdo */
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Modo Escuro do Container */
+body.dark-mode .chat-main-container {
+    background-color: #1a1a1a;
+}
+
+
+/* ================================================= */
+/* 3. ESTRUTURA INTERNA DO CHAT */
+/* ================================================= */
+
+/* Header */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Modo Escuro do Header */
+body.dark-mode .chat-header {
+    background-color: #222;
+    border-bottom: 1px solid #333;
+    color: #fff;
+}
+
+.chat-header .back-btn {
+    font-size: 1.2rem;
+    color: #333;
+    margin-right: 15px;
+    text-decoration: none;
+}
+.chat-header .header-info {
+    flex-grow: 1;
+}
+.chat-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.chat-header .online-status {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #10b981; 
+}
+.chat-header .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.chat-header .header-actions i {
+    font-size: 1.1rem;
+    color: #999;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Área de Mensagens */
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo das mensagens */
+.message {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    font-size: 0.95rem;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Mensagens do Bot (Esquerda) */
+.bot-message {
+    align-self: flex-start;
+    background-color: #fff;
+    color: #333;
+    border-top-left-radius: 3px;
+    margin-left: 30px; 
+}
+body.dark-mode .bot-message {
+    background-color: #333;
+    color: #ddd;
+}
+
+/* Mensagens do Usuário (Direita) */
+.user-message {
+    align-self: flex-end;
+    background-color: #df2356; 
+    color: white;
+    border-top-right-radius: 3px;
+}
+
+/* Ícone do Bot (Avatar) */
+.bot-message::before {
+    content: '\f118'; 
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: -25px;
+    top: 5px;
+    font-size: 1.5rem;
+    color: #df2356;
+}
+
+/* Área de Input */
+.chat-input-area {
+    display: flex;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+/* Modo Escuro da Área de Input */
+body.dark-mode .chat-input-area {
+    background-color: #222;
+    border-top: 1px solid #333;
+}
+body.dark-mode #user-input {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+.chat-input-area #user-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 1rem;
+    margin-right: 10px;
+    outline: none;
+}
+.chat-input-area button {
+    background-color: #df2356;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-left: 5px;
+}
+.chat-input-area button:hover {
+    background-color: #c91e4c;
+}
+
+/* =======================================================
+    REGRAS DE TEMA ESCURO PARA MODAIS (.dark-mode)
+    ======================================================= */
+
+/* 1. ESTILOS DO CONTEÚDO DO MODAL (O cartão principal - Padrão para Carrinho) */
+body.dark-mode .modal-content {
+    background-color: #2c2c2c; 
+    color: #f0f0f0; 
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.7), 
+        0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* 2. ESTILOS DO BOTÃO DE FECHAR (Padrão para Carrinho) */
+body.dark-mode .close-btn {
+    color: #cccccc; 
+}
+
+body.dark-mode .close-btn:hover {
+    color: #ff6b6b; 
+}
+
+/* 3. ESTILOS ESPECÍFICOS DO MODAL DE LOGIN */
+
+body.dark-mode .login-title {
+    color: #f0f0f0; 
+}
+
+body.dark-mode label {
+    color: #ccc; 
+}
+
+/* Campos de Input no Tema Escuro */
+body.dark-mode input[type="text"],
+body.dark-mode input[type="password"] {
+    background-color: #3a3a3a; 
+    color: #fff; 
+    border: 1px solid #4a4a4a; 
+}
+
+body.dark-mode input[type="text"]:focus,
+body.dark-mode input[type="password"]:focus {
+    border-color: #df2356; 
+    box-shadow: 0 0 0 3px rgba(223, 35, 86, 0.3);
+}
+
+/* Placeholder (para acessibilidade visual) */
+body.dark-mode input::placeholder { 
+    color: #888;
+}
+
+/* Container de senha e toggle */
+body.dark-mode .password-toggle {
+    color: #999;
+}
+body.dark-mode .password-toggle:hover {
+    color: #df2356;
+}
+
+/* Botão Secundário (Google) no Tema Escuro */
+body.dark-mode .google-sign-in-btn {
+    background-color: #3a3a3a;
+    color: #f0f0f0;
+    border: 1px solid #4a4a4a;
+    box-shadow: none;
+}
+body.dark-mode .google-sign-in-btn:hover {
+    background-color: #444;
+    transform: none; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 4. ESTILOS ESPECÍFICOS DO MODAL DE CARRINHO */
+body.dark-mode .modal-header {
+    border-bottom: 1px solid #4a4a4a;
+}
+
+body.dark-mode .cart-title {
+    color: #f0f0f0;
+}
+
+body.dark-mode .cart-footer {
+    border-top: 1px solid #4a4a4a;
+}
+
+/* =======================================================
+   ESTILOS DOS BOTÕES DE AÇÃO DO ITEM DO CARRINHO (MODAL)
+   Classes: .quantity-btn, .item-quantity, .remove-btn
+   ======================================================= */
+
+/* 1. Container de Ações (Alinhamento) */
+.item-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Reduzido o espaço para um visual mais compacto */
+}
+
+/* 2. Botões de Aumentar e Diminuir (+/-) */
+
+/* Estilo base para os botões +/- */
+.quantity-btn {
+    /* Aparência: Gradiente, Borda, Arredondamento */
+    background: linear-gradient(180deg, #ff2e6a, #d40f54); /* Gradiente Pink/Vermelho */
+    border: 1px solid #d40f54; 
+    border-radius: 6px; /* Cantos levemente mais definidos */
+    
+    /* Tamanho e Layout */
+    width: 28px; 
+    height: 28px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Tipografia e Interação */
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff; /* Texto branco */
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+}
+
+/* Efeito ao passar o mouse: Inverte o gradiente e aumenta sutilmente */
+.quantity-btn:hover {
+    background: linear-gradient(180deg, #d40f54, #ff2e6a);
+    transform: scale(1.05);
+}
+
+/* 3. Número da Quantidade (Texto) */
+
+.item-quantity {
+    /* Cor de fundo neutra, mas com bordas arredondadas e sombra sutil */
+    background-color: #f7f7f7;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 0 8px; /* Espaçamento interno */
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    /* Garante que o texto fique centralizado na mesma altura dos botões (28px de altura) */
+    line-height: 28px; 
+    text-align: center;
+}
+
+/* 4. Botão de Excluir (Lixeira) */
+
+.remove-btn {
+    /* Aparência: Fundo transparente, Borda Vermelha no hover */
+    background-color: transparent;
+    border: 1px solid transparent; /* Borda transparente inicial */
+    border-radius: 50%; /* Torna o botão circular */
+    
+    /* Tamanho e Layout */
+    width: 32px; /* Ligeiramente maior que os botões +/- */
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+/* Estilo para o ícone da lixeira (a tag <i>) */
+.remove-btn i {
+    font-size: 18px; /* Tamanho do ícone */
+    color: #ff2e6a; /* Cor pink/vermelho do tema */
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+/* Efeito ao passar o mouse: Destaque com cor de exclusão e fundo */
+.remove-btn:hover {
+    background-color: #ff2e6a; /* Fundo Pink */
+    border-color: #d40f54;
+    transform: rotate(5deg) scale(1.05); /* Um efeito sutil de rotação/vibração */
+}
+
+/* O ícone da lixeira fica branco ao passar o mouse */
+.remove-btn:hover i {
+    color: #fff; 
+}
+
+/* =======================================================
+    ESTILOS ESPECÍFICOS DO MODAL DE DETALHES (PRODUTO)
+    ======================================================= */
+
+/* 1. Estrutura Principal do Conteúdo do Modal */
+#detalhes-modal .modal-content {
+    /* Sobrescreve a largura padrão do carrinho/login para o modal de detalhes */
+    max-width: 950px; 
+    width: 95%; 
+    padding: 35px; /* Mais padding para um visual premium */
+}
+
+/* 2. Container de Duas Colunas (Flexbox) */
+.detalhes-produto-container {
+    display: flex;
+    gap: 40px; /* Espaçamento entre as duas colunas */
+    min-height: 450px;
+}
+
+/* 3. Coluna da Imagem (Esquerda) */
+.detalhes-left {
+    flex: 1; /* Ocupa 50% do espaço disponível */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--border-color, #eee); /* Linha divisória sutil */
+    padding-right: 40px;
+}
+
+/* 4. Estilo da Imagem */
+.detalhes-left img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar */
+}
+
+/* 5. Coluna das Informações (Direita) */
+.detalhes-right {
+    flex: 1; /* Ocupa 50% do espaço disponível */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para empurrar as ações para o rodapé */
+}
+
+/* 6. Cabeçalho/Título do Produto */
+#detalhes-nome {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: var(--text-color, #333);
+}
+
+#detalhes-id {
+    display: block;
+    color: #999;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+/* 7. Preço e Descrição */
+#detalhes-preco {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #df2356; /* Cor de destaque */
+    margin-bottom: 20px;
+}
+
+#detalhes-descricao {
+    font-size: 1rem;
+    color: var(--text-muted, #555);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-height: 120px;
+    overflow-y: auto; /* Permite rolar se a descrição for muito longa */
+}
+
+/* 8. Tabela de Especificações */
+.detalhes-especificacoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas para chave e valor */
+    gap: 15px 10px;
+    margin-bottom: 30px;
+}
+
+.espec-label {
+    font-weight: 600;
+    color: var(--text-color, #333);
+    font-size: 0.95rem;
+}
+
+.espec-value {
+    color: #df2356; /* Destaque para o valor */
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-align: right;
+}
+
+/* 9. Botões de Ação do Modal (Adicionar e Favoritar) */
+.detalhes-acoes {
+    display: flex;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color, #eee); 
+}
+
+/* Estilo do botão de Adicionar ao Carrinho (Comprar Agora) */
+#detalhes-add-to-cart {
+    flex-grow: 1; /* Ocupa a maior parte do espaço */
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    /* Reutiliza o estilo do botão de Checkout, mas com cor Primária */
+    background: linear-gradient(135deg, #df2356, #FF0059); 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#detalhes-add-to-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(223, 35, 86, 0.4);
+}
+
+/* Estilo do botão de Favoritar (Coração) */
+#detalhes-favoritar {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color, #ddd);
+    background-color: var(--bg-color, #f7f7f7);
+    color: #df2356; 
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#detalhes-favoritar:hover {
+    background-color: #ffe6eb;
+    transform: scale(1.05);
+}
+
+#detalhes-favoritar.favoritado {
+    background-color: #df2356;
+    color: white;
+    border-color: #df2356;
+}
+
+/* Botão de Compartilhar */
+#detalhes-share-btn {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color, #ddd);
+    background-color: var(--bg-color, #f7f7f7);
+    color: #4a4a4a;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#detalhes-share-btn:hover {
+    background-color: #e0e0e0;
+    color: #007bff;
+}
+
+/* =======================================================
+    REGRAS DE TEMA ESCURO (DARK MODE)
+    ======================================================= */
+
+body.dark-mode .detalhes-left {
+    border-right-color: #4a4a4a;
+}
+
+body.dark-mode #detalhes-nome {
+    color: #f0f0f0;
+}
+
+body.dark-mode #detalhes-id {
+    color: #bbb;
+}
+
+body.dark-mode #detalhes-descricao {
+    color: #ccc;
+}
+
+body.dark-mode .espec-label {
+    color: #f0f0f0;
+}
+
+body.dark-mode .detalhes-acoes {
+    border-top-color: #4a4a4a;
+}
+
+body.dark-mode #detalhes-favoritar {
+    background-color: #3a3a3a;
+    border-color: #4a4a4a;
+    color: #df2356;
+}
+
+body.dark-mode #detalhes-favoritar:hover {
+    background-color: #444;
+}
+
+body.dark-mode #detalhes-favoritar.favoritado {
+    background-color: #df2356;
+    color: white;
+}
+
+body.dark-mode #detalhes-share-btn {
+    background-color: #3a3a3a;
+    border-color: #4a4a4a;
+    color: #f0f0f0;
+}
+
+body.dark-mode #detalhes-share-btn:hover {
+    background-color: #444;
+    color: #007bff;
+}
+
+/* =======================================================
+    MEDIA QUERIES (Para Responsividade)
+    ======================================================= */
+
+@media (max-width: 800px) {
+    #detalhes-modal .modal-content {
+        max-width: 90%;
+        width: 90%;
+        padding: 20px;
+    }
+    
+    .detalhes-produto-container {
+        flex-direction: column; /* Pilha verticalmente em telas menores */
+        gap: 25px;
+        min-height: auto;
+    }
+
+    .detalhes-left {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color, #eee);
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    .detalhes-left img {
+        max-height: 250px;
+    }
+
+    .detalhes-right {
+        padding-top: 10px;
+    }
+
+    #detalhes-nome {
+        font-size: 1.8rem;
+    }
+
+    #detalhes-preco {
+        font-size: 2.2rem;
+    }
+}
+
+/* ====================
+   VARIÁVEIS GLOBAIS (Recomendado para consistência)
+   ==================== */
+:root {
+    --primary-color: #df2356;
+    --secondary-color: #ff0059;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --bg-light: #f7f7f7;
+    --bg-dark: #121212;
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #1e1e1e;
+    --border-light: rgba(255, 255, 255, 0.15);
+    --border-dark: #333333;
+}
+
+/* ====================
+   ESTILOS DE MODO ESCURO GERAL
+   ==================== */
+body.dark-mode {
+    /* Fundo da página */
+    background-color: var(--bg-dark) !important; 
+    color: var(--text-light);
+}
+
+/* 1. SCROLLBAR */
+body.dark-mode ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+/* 2. BACKGROUND PATTERN */
+body.dark-mode .bg-pattern {
+    /* Ajusta a opacidade para ser menos intrusivo no escuro */
+    opacity: 0.2; 
+}
+
+/* 3. SIDEBAR (Barra Lateral) */
+body.dark-mode .sidebar {
+    /* Fundo escuro sem gradiente forte, mas com desfoque */
+    background: rgba(26, 26, 26, 0.8); /* Preto suave e transparente */
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    /* Mantém o backdrop-filter */
+}
+
+body.dark-mode .sidebar h2, 
+body.dark-mode .sidebar nav a, 
+body.dark-mode .dropdown .dropbtn {
+    color: var(--text-light);
+}
+
+body.dark-mode .sidebar nav a:hover {
+    /* Usa a cor primária para hover */
+    background: rgba(var(--primary-color, #df2356), 0.3); 
+}
+
+body.dark-mode .menu-config {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* 4. TOP NAVIGATION (Barra Superior) */
+body.dark-mode .top-nav {
+    /* Fundo escuro transparente */
+    background: rgba(26, 26, 26, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    /* Mantém o backdrop-filter */
+}
+
+/* Search Bar no Dark Mode */
+body.dark-mode .search-container input {
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05); /* Fundo mais sutil */
+}
+
+body.dark-mode .search-container input::placeholder {
+    color: #a0a0a0;
+}
+
+body.dark-mode .search-container input:focus {
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .search-btn, 
+body.dark-mode .mic-btn {
+    color: var(--primary-color);
+}
+body.dark-mode .search-btn:hover,
+body.dark-mode .mic-btn:hover {
+    color: var(--secondary-color);
+}
+
+/* Botão de Login */
+body.dark-mode .login-btn {
+    background: var(--primary-color);
+    color: var(--text-light);
+}
+body.dark-mode .login-btn:hover {
+    background: #b71b44;
+}
+
+/* 5. DROPDOWN CONTENT (Usado na sidebar) */
+body.dark-mode .dropdown-content {
+    background-color: #2a2a2a; /* Fundo do menu dropdown */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .dropdown-content button {
+    color: var(--text-light);
+}
+
+body.dark-mode .dropdown-content button:hover {
+    background-color: #383838;
+}
+
+/* 6. CONTEÚDO PRINCIPAL (Home/Catálogo) */
+
+/* Grid de Produtos */
+body.dark-mode .produto {
+    background: var(--card-bg-dark); /* Fundo do Card de Produto */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    color: var(--text-light);
+}
+
+body.dark-mode .acoes {
+    background: #2a2a2a; /* Fundo da seção de botões do Card */
+}
+
+/* Botões do Card (Comprar, Carrinho, Favoritar) */
+body.dark-mode .acoes a.comprar {
+    background: var(--primary-color);
+    color: var(--text-light);
+}
+
+body.dark-mode .acoes a.comprar:hover {
+    background: #b71b44;
+}
+
+body.dark-mode .add-to-cart-btn,
+body.dark-mode .acoes .favoritar {
+    color: #fff; /* Ícones brancos */
+}
+
+body.dark-mode .add-to-cart-btn:hover,
+body.dark-mode .acoes .favoritar:hover,
+body.dark-mode .acoes .favoritar.favoritado {
+    color: var(--secondary-color); /* Ícones rosa/pink no hover */
+}
+
+/* 7. PÁGINA DE PRODUTO */
+body.dark-mode .produto-detalhes {
+    /* Ajusta o painel principal de detalhes do produto */
+    background: linear-gradient(135deg, #2a2a2a, #333333);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+body.dark-mode .imagem-principal {
+    background: #333; /* Fundo da imagem principal */
+}
+
+body.dark-mode .info-produto {
+    /* Mantém o estilo de fundo escuro mais dramático para as informações */
+    background: #1a0010;
+}
+
+body.dark-mode .titulo-produto,
+body.dark-mode .info-material, 
+body.dark-mode .info-tamanho {
+    color: #fff;
+}
+
+body.dark-mode .descricao-produto {
+    color: #ccc;
+}
+
+/* Botões de Ação na Página de Produto */
+body.dark-mode .btn-comprar {
+    background: linear-gradient(90deg, #ff2e6a, #d40f54);
+    color: #fff;
+}
+
+body.dark-mode .acoes-produto button {
+    border: 1px solid #ff2e6a;
+    color: #ff2e6a;
+}
+body.dark-mode .acoes-produto button:hover {
+    background: #ff2e6a;
+    color: #fff;
+}
+
+/* 8. ADMIN DASHBOARD */
+
+/* Variáveis para o dashboard (se necessário, defina aqui ou globalmente) */
+body.dark-mode {
+    --card-bg: #1e1e1e;
+    --text-primary: #f0f0f0;
+    --text-secondary: #aaaaaa;
+    --accent: #df2356;
+    --accent-soft: rgba(223, 35, 86, 0.15);
+    --border-color: #333333;
+    --red: #e74c3c;
+}
+
+body.dark-mode .admin-top-nav,
+body.dark-mode .admin-sub-menu,
+body.dark-mode .metric-card,
+body.dark-mode .data-card {
+    background: var(--card-bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .admin-top-nav h1 {
+    color: var(--text-primary);
+}
+
+body.dark-mode .user-info,
+body.dark-mode .logout-link,
+body.dark-mode .admin-sub-menu a,
+body.dark-mode .metric-title,
+body.dark-mode .metric-trend,
+body.dark-mode .order-list li,
+body.dark-mode .product-rank-list {
+    color: var(--text-secondary);
+}
+
+body.dark-mode .metric-value,
+body.dark-mode .data-card h2 {
+    color: var(--text-primary);
+}
+
+body.dark-mode .admin-sub-menu a:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+body.dark-mode .order-list li {
+    border-bottom: 1px solid var(--border-color);
+}
+
+body.dark-mode .usuarios-table th,
+body.dark-mode .usuarios-table td {
+    border: 1px solid #333;
+}
+
+body.dark-mode .usuarios-table thead th {
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+}
+
+/* =======================================================
+   9. LOGIN WALL (TELA DE ACESSO RESTRITO) - DARK MODE
+   ======================================================= */
+
+/* Fundo da seção */
+body.dark-mode .login-wall-main {
+    /* Usa o cinza escuro de fundo */
+    background-color: var(--bg-dark); 
+}
+
+/* Card principal (Formulário) */
+body.dark-mode .login-wall-card {
+    background: var(--card-bg-dark); /* Cinza escuro para o cartão */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .login-wall-card h2 {
+    color: var(--text-light); /* Texto branco */
+}
+
+body.dark-mode .login-wall-card p {
+    color: #a0a0a0; /* Cinza claro para descrição */
+}
+
+body.dark-mode .lock-icon {
+    color: var(--primary-color); /* Mantém a cor de destaque (Rosa/Pink) */
+}
+
+/* Formulário e Inputs */
+body.dark-mode .login-wall-form label {
+    color: var(--text-light);
+}
+
+body.dark-mode .login-wall-form input {
+    background: #2a2a2a; /* Fundo do campo mais escuro */
+    color: var(--text-light);
+    border: 1px solid #444;
+}
+
+body.dark-mode .login-wall-form input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(223, 35, 86, 0.3);
+}
+
+body.dark-mode .password-toggle {
+    color: #a0a0a0;
+}
+
+/* Botão principal */
+body.dark-mode .sign-in-btn {
+    background-color: var(--primary-color);
+}
+body.dark-mode .sign-in-btn:hover {
+    background-color: #b71b44;
+}
+
+/* Texto abaixo do formulário */
+body.dark-mode .login-form-container p {
+    color: #a0a0a0;
+}
+
+/* Imagem decorativa (Opcional, se a imagem for clara) */
+/* Se a imagem for muito clara, você pode adicionar um filtro:
+body.dark-mode .login-wall-image {
+    filter: brightness(0.8) grayscale(0.2); 
+} 
+*/
